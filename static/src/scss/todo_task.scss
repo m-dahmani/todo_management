@@ -1,0 +1,29 @@
+.navHeader {
+    table {
+        text-align: center;
+        > thead {
+            > tr {
+                th {
+                    background-color: #3fada8 !important;
+                    border: 0.063rem solid #e7e9ed;
+                    padding: 0.94rem;
+                    text-align: center;
+                    &:nth-child(3) {
+                        width: 15.625rem;
+                        color: white;
+                        &:hover {
+                            background: linear-gradient(#696484, #8788ba);
+                        }
+                    }
+               }
+            }
+        }
+        td {
+            padding: 0.94rem;
+            border: 0.063rem solid #e7e9ed;
+            &:hover {
+                background: linear-gradient(#696484, #8788ba);
+            }
+        }
+    }
+}

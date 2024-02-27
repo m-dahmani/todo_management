@@ -1,0 +1,13 @@
+<odoo>
+    <menuitem
+        id="todo_root_menu"
+        name="To-Do"
+        web_icon="todo_management,static/description/logo.png"
+    />
+    <menuitem
+        id="todo_menu"
+        name="All Tasks"
+        parent="todo_root_menu"
+    />
+
+</odoo>

@@ -6,7 +6,7 @@
     />
     <menuitem
         id="todo_menu"
-        name="All Tasks"
+        name="To-Do"
         parent="todo_root_menu"
     />
 

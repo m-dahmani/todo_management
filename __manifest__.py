@@ -8,7 +8,7 @@
     'website': '',
     
     'depends': [
-        'base','mail','contacts'
+        'base','mail','contacts',
     ],
     'data': [
         'security/ir.model.access.csv',

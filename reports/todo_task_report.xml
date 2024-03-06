@@ -1,0 +1,131 @@
+<odoo>
+     <record id="property_report" model="ir.actions.report">
+         <field name="name">Task Report</field>
+         <field name="model">todo.task</field>
+         <field name="report_type">qweb-pdf</field>
+         <field name="binding_model_id" ref="model_todo_task"/>
+         <field name="binding_type">report</field>
+         <field name="report_name">todo_management.task_report_template</field>
+    </record>
+    <template id="task_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="r">
+                    <style>
+                    header {
+                        margin-left: 10px;
+                        margin-bottom: 3.5rem;
+                    }
+                    main {
+                        background-color: #fff;
+                        margin: auto;
+                        border: 0.125rem solid;
+                        margin: 0.625rem;
+                        padding: 1.875rem;
+                    }
+                    section {
+                        margin-bottom: 5rem;
+                    }
+                    p {
+                        margin: auto;
+                        line-height: 1.2rem;
+                    }
+                    table {
+                        text-align: center;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border: 0.125rem solid #000000;
+                    }
+                    table th,
+                    table td {
+                        padding: 0.625rem;
+                        border: 0.094rem solid #a5b4fc;
+                        color: #313030;
+                    }
+                    footer {
+                        background-color: #fff;
+                        text-align: center;
+                        margin-left: 10px;
+                        margin-top: 5rem;
+                        margin-bottom: 20px;
+                        border: 0.094rem solid
+                    }
+                    </style>
+                    <body>
+                        <header>
+                            <div>
+                                <img src="/todo_management/static/description/logo.png" alt="Header"
+                                        style="max-width:100%;max-height: 150px;"/>
+                            </div>
+                            <div>
+                                YourCompany<br/>
+                                250 Executive Park Blvd, Suite 3400<br/>
+                                +1 (650) 555-0111
+                           </div>
+                        </header>
+                        <main>
+                            <section>
+                                <strong>TASK:</strong>
+                                <span t-field="r.name"/>
+                                <br/>
+                                <strong>Due Date:</strong>
+                                <span t-field="r.due_date"/>
+                                <br/>
+                                <strong>Assign To:</strong>
+                                <span t-field="r.assign_to_id"/>
+                                <br/>
+                                <strong>Estimated Time:</strong>
+                                <span t-field="r.timer_estimated"/>
+                            </section>
+                            <section>
+                                <strong>Description:</strong>
+                                <p>You have to call all customers to collect feedback and ensure there is no problem with them.</p>
+                                <br/>
+                                <table>
+                                    <thead>
+                                        <th colspan="4">Timesheet</th>
+                                    </thead>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th>time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="r.line_ids" t-as="l">
+                                            <tr>
+                                                <td><span t-field="l.id"/></td>
+                                                <td><span t-field="l.date"/></td>
+                                                <td><span t-field="l.description"/></td>
+                                                <td><span t-field="l.timer"/></td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="3">Total Time</th>
+                                            <td><span t-field="l.timer_total"/></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </section>
+                        </main>
+                        <footer>
+                            <div>
+                                YourCompany email:info@yourcompany.com, phone:+1 (650) 555-0111, RN:123456
+                            </div>
+                        </footer>
+                         <!-- Pagination -->
+                           <nav aria-label="Page navigation">
+                            <ul>
+                                <li class="page-item">1/1</li>
+                            </ul>
+                          </nav>
+                    </body>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

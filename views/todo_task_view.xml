@@ -56,9 +56,16 @@
                                 <tree editable="bottom">
                                     <field name="date"/>
                                     <field name="description"/>
-                                    <field name="timer" sum="Total"/>
+<!--                                    <field name="timer" sum="Total"/>-->
+                                    <field name="timer"/>
                                 </tree>
                             </field>
+                                <!-- Totals -->
+                                <group colspan="4">
+                                    <group class="oe_subtotal_footer">
+                                        <field name="timer_total" nolabel="1" class="oe_subtotal_footer_separator" colspan="2"/>
+                                    </group>
+                                </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -91,7 +98,7 @@
     </record>
 
     <record id="todo_action" model="ir.actions.act_window">
-        <field name="name">To-do</field>
+        <field name="name">ToDo Tasks</field>
         <field name="res_model">todo.task</field>
     </record>
 

@@ -8,7 +8,7 @@
     'website': '',
     
     'depends': [
-        'base','mail','contacts',
+        'base', 'mail', 'contacts',
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -16,34 +16,12 @@
         'views/todo_task_view.xml',
         'reports/todo_task_report.xml',
     ],
-
+    
     'assets': {
         'web.assets_backend': [
             'todo_management/static/src/scss/*.scss',
         ],
     },
-
+    
     'application': True,
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

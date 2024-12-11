@@ -9,7 +9,7 @@
     </record>
     <template id="task_report_template">
         <t t-call="web.html_container">
-            <t t-call="web.basic_layout">
+            <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="r">
                     <style>
                     header {
@@ -106,7 +106,7 @@
                                     <tfoot>
                                         <tr>
                                             <th colspan="3">Total Time</th>
-                                            <td><span t-field="l.timer_total"/></td>
+                                            <td><span t-field="r.timer_total"/></td>
                                         </tr>
                                     </tfoot>
                                 </table>
